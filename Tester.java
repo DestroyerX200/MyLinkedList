@@ -23,5 +23,15 @@ public class Tester {
 		System.out.println(fruits);
 
 		System.out.println(fruits.toStringReversed());
+
+		System.out.println();
+
+		System.out.println(fruits.remove(0)); System.out.println(fruits);
+		System.out.println(fruits.remove(5)); System.out.println(fruits);
+		System.out.println(fruits.remove(2)); System.out.println(fruits);
+		System.out.println(fruits.remove(0)); System.out.println(fruits);
+		System.out.println(fruits.remove(0)); System.out.println(fruits);
+		System.out.println(fruits.remove(0)); System.out.println(fruits);
+		System.out.println(fruits.remove(0)); System.out.println(fruits);
 	}
 }
