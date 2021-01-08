@@ -26,7 +26,6 @@ public class MyLinkedList{
  		throw new IndexOutOfBoundsException("index " + index + " is invalid.");
  	}
 	else if (index == size) {
-		System.out.println("DEBUG");
  		add(value);
  	}
  	else if (index == 0) {
@@ -37,25 +36,46 @@ public class MyLinkedList{
  		size++;
  	}
  	else {
- 		System.out.println("DEBUG");
 	 	Node current = start;
 	 	for (int i = 0; i < index; i++) {
-	 		if (i == index-1) {
-	 			Node before = current;
-	 			Node after = current.next();
-	 			Node insert = new Node(value);
-	 			before.setNext(insert);
-	 			insert.setPrev(before);
-	 			insert.setNext(after);
-	 			after.setPrev(insert);
-	 		}
 	 		current = current.next();
 		}
-		size++;
+	current = current.prev();
+	Node before = current;
+	Node after = current.next();
+	Node insert = new Node(value);
+	before.setNext(insert);
+	insert.setPrev(before);
+	insert.setNext(after);
+	after.setPrev(insert);
+	size++;
 	}
  }
- // public String get(int index);
- // public String set(int index, String value);
+ public String get(int index) {
+ 	if (index < 0 || index >= size) {
+ 		throw new IndexOutOfBoundsException("index " + index + " is invalid.");
+ 	}
+ 	Node current = start;
+ 	for (int i = 0; i < index; i++) {
+ 		current = current.next();
+ 	}
+ 	return current.data();
+ }
+ public String set(int index, String value) {
+ 	Node current = start;
+	 	for (int i = 0; i < index; i++) {
+	 		current = current.next();
+		}
+	Node oldCurrent = current;
+	Node before = current.prev();
+	Node after = current.next();
+	current = new Node(value);
+	before.setNext(current);
+	current.setPrev(before);
+	current.setNext(after);
+	after.setPrev(current);
+	return oldCurrent.data();
+ }
  public String toString() {
  	if (size == 0) {
  		return "";

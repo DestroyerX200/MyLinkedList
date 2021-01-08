@@ -13,5 +13,13 @@ public class Tester {
 		fruits.add(5, "orange"); System.out.println(fruits);
 		fruits.add(0, "cucumber"); System.out.println(fruits);
 		// fruits.add(324, "error");
+
+		System.out.println(fruits.get(2));
+
+		System.out.println(fruits.get(6));		
+		
+		System.out.println(fruits);
+		System.out.println(fruits.set(3, "BOOM"));
+		System.out.println(fruits);
 	}
 }
