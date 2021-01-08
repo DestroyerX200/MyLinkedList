@@ -5,6 +5,13 @@ public class Tester {
 		fruits.add("banana"); // System.out.println(fruits.start.data()); System.out.println(fruits.end.data()); System.out.println(fruits.end.prev().data()); 
 		fruits.add("citrus"); // System.out.println(fruits.start.data()); System.out.println(fruits.end.data()); System.out.println(fruits.end.prev().data());
 		fruits.add("dog"); // System.out.println(fruits.start.data()); System.out.println(fruits.end.data()); System.out.println(fruits.end.prev().data());
+		
+		System.out.println();
+
 		System.out.println(fruits);		
+		fruits.add(2, "pineapple"); System.out.println(fruits);
+		fruits.add(5, "orange"); System.out.println(fruits);
+		fruits.add(0, "cucumber"); System.out.println(fruits);
+		// fruits.add(324, "error");
 	}
 }
