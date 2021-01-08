@@ -21,5 +21,7 @@ public class Tester {
 		System.out.println(fruits);
 		System.out.println(fruits.set(3, "BOOM"));
 		System.out.println(fruits);
+
+		System.out.println(fruits.toStringReversed());
 	}
 }

@@ -22,8 +22,8 @@ public class MyLinkedList{
  	return true;
  }
  public void add(int index, String value) {
- 	if (index < 0 || index > size) {
- 		throw new IndexOutOfBoundsException("index " + index + " is invalid.");
+ 	if (index < 0 || index >= size) {
+ 		throw new IndexOutOfBoundsException("index " + index + " not a valid index.");
  	}
 	else if (index == size) {
  		add(value);
@@ -53,7 +53,7 @@ public class MyLinkedList{
  }
  public String get(int index) {
  	if (index < 0 || index >= size) {
- 		throw new IndexOutOfBoundsException("index " + index + " is invalid.");
+ 		throw new IndexOutOfBoundsException("index " + index + " not a valid index.");
  	}
  	Node current = start;
  	for (int i = 0; i < index; i++) {
@@ -62,6 +62,9 @@ public class MyLinkedList{
  	return current.data();
  }
  public String set(int index, String value) {
+ 	if (index < 0 || index >= size) {
+ 		throw new IndexOutOfBoundsException("index " + index + " not a valid index.");
+ 	}
  	Node current = start;
 	 	for (int i = 0; i < index; i++) {
 	 		current = current.next();
@@ -87,6 +90,19 @@ public class MyLinkedList{
  		current = current.next();
  	}
  	returnStr += end.data() + "]";
+ 	return returnStr;
+ }
+ public String toStringReversed() {
+ 	if (size == 0) {
+ 		return "";
+ 	}
+ 	String returnStr = "[";
+ 	Node current = end;
+ 	for (int i = 0; i < size-1; i++) {
+ 		returnStr += current.data() + ", ";
+ 		current = current.prev();
+ 	}
+ 	returnStr += start.data() + "]";
  	return returnStr;
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
