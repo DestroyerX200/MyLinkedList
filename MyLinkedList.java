@@ -14,6 +14,7 @@ public class MyLinkedList{
  	else {
  		end = new Node(value);
  	}
+ 	return true;
 
  }
  public boolean add(int index, String value);
