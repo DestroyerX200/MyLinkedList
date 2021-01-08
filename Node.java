@@ -14,13 +14,13 @@ public class Node {
 	public Node prev() {
 		return prev;
 	}
-	public String setData(String data) {
+	public void setData(String data) {
 		this.data = data;
 	}
-	public Node setNext(Node node) {
+	public void setNext(Node node) {
 		next = node;
 	}
-	public Node setPrev(Node node) {
+	public void setPrev(Node node) {
 		prev = node;
 	} 
 
