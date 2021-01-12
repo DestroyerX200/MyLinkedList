@@ -106,7 +106,7 @@ public class MyLinkedList{
  	return returnStr;
  }
  public String remove(int index) {
- 	if (index < 0 || index >= size || size == 0) {
+ 	if (index < 0 || index >= size) {
  		throw new IndexOutOfBoundsException("index " + index + " not a valid index.");
  	}
  	if (size == 1) {
@@ -141,5 +141,31 @@ public class MyLinkedList{
 		return current.data();
  	}
  }
+/*
+*@postcondition: All of the elements from other are removed from the other, and connected to the end of this linked list.
+*@postcondition: The size of other is reduced to 0.
+*@postcondition: The size of this is now the combined sizes of both original lists
+*/
+	public void extend(MyLinkedList other) {
+		if (other.size == 0) {
+		}
+		else if (this.size == 0) {
+			this.start = other.start;
+			this.end = other.end;
+			this.size = other.size;
+			other.size = 0;
+			other.start = null;
+			other.end = null;
+		}
+		else {
+			this.size += other.size;
+			this.end.setNext(other.start);
+			other.start.setPrev(this.end);
+			this.end = other.end;
+			other.size = 0;
+			other.start = null;
+			other.end = null;
+		}
+	}
  //Any helper method that returns a Node object MUST BE PRIVATE!
 }
